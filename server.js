@@ -74,6 +74,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Redirect root page to the actual homepage
+app.get('/', (req, res) => {
+  res.redirect('/home.html');
+});
+
 // Import Route Blueprints
 import authRoutes from './routes/auth.js';
 import destinationRoutes from './routes/destinations.js';
