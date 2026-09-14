@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Sites in Delhi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: yellow;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: orange;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font: inherit;
+        }
+
+        .back-btn:hover {
+            background-color: darkorange;
+        }
+
+        .category {
+            margin: 30px 0;
+        }
+
+        .category h2 {
+            font-size: 22px;
+            color: green;
+            border-bottom: 2px solid green;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            transition: box-shadow 0.3s;
+        }
+
+        .location:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .location img {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        .book-now {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .book-now button {
+            font-size: 18px;
+            padding: 12px 20px;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-now button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Historical Sites in Delhi</h1>
+        <a class="back-btn" href="home.html">Back</a>
+    </header>
+
+    <section class="category">
+        <h2>Historical Monuments</h2>
+        <div class="location">
+            <img src="india gate.jpg" alt="India Gate">
+            <h3>1. India Gate</h3>
+            <p>Details: A war memorial dedicated to the soldiers who fought in World War I, surrounded by lush gardens.</p>
+        </div>
+        <div class="location">
+            <img src="qutub minar.webp" alt="Qutub Minar">
+            <h3>2. Qutub Minar</h3>
+            <p>Details: The tallest brick minaret in the world, a UNESCO World Heritage Site showcasing Indo-Islamic architecture.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Cultural Heritage</h2>
+        <div class="location">
+            <img src="humayuns tomb.jpg" alt="Humayun's Tomb">
+            <h3>1. Humayun's Tomb</h3>
+            <p>Details: A UNESCO World Heritage Site, this magnificent garden tomb is a precursor to the Taj Mahal.</p>
+        </div>
+        <div class="location">
+            <img src="red fort.jpg" alt="Red Fort">
+            <h3>2. Red Fort</h3>
+            <p>Details: A symbol of India's rich history, this fort is famous for its stunning Mughal architecture.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Additional Sites</h2>
+        <div class="location">
+            <img src="Lotus Temple.jpg" alt="Lotus Temple">
+            <h3>1. Lotus Temple</h3>
+            <p>Details: A Bahá'í House of Worship, known for its flower-like architecture and serene environment.</p>
+        </div>
+        <div class="location">
+            <img src="Jama Masjid.jpg" alt="Jama Masjid">
+            <h3>2. Jama Masjid</h3>
+            <p>Details: One of the largest mosques in India, renowned for its impressive architecture and beautiful courtyard.</p>
+        </div>
+    </section>
+
+    <div class="book-now">
+        <button onclick="window.location.href='booking.html'">Book Now</button>
+    </div>
+
+    <footer>
+        <p>Additional information:</p>
+        <ul>
+            <li>Best time to visit: October to March</li>
+            <li>Language: Hindi, English, Urdu</li>
+            <li>Cuisine: North Indian cuisine, Mughlai dishes</li>
+            <li>Must-try dishes: Biryani, Chole Bhature, Parathas</li>
+        </ul>
+    </footer>
+</body>
+</html>

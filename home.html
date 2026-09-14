@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCREDIBLE INDIA</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; /* Light pastel green */
+        }
+
+        header {
+            background: linear-gradient(135deg, #66bb6a, #388e3c); /* Lighter green gradient */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background 0.3s, border-radius 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 204, 0, 0.3); /* Yellow */
+            border-radius: 5px;
+        }
+
+        .banner {
+            background-image: url('banner.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .search-bar input,
+        .search-bar button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+
+        .search-bar input {
+            width: 180px;
+            background-color: white;
+            color: silver;
+        }
+
+        .search-bar button {
+            background-color: orange; /* Bright yellow */
+            color: black;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: orange; /* Orange */
+        }
+
+        .featured-destinations {
+            padding: 2rem;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-destinations h2 {
+            margin-bottom: 1rem;
+            color: silver; /* Darker text color */
+        }
+
+        .destinations {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .destination {
+            margin: 10px;
+            text-align: center;
+            flex: 1 1 calc(25% - 20px);
+            max-width: calc(25% - 20px);
+            transition: transform 0.3s;
+        }
+
+        .destination:hover {
+            transform: scale(1.05);
+        }
+
+        .destination img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: green; /* Green */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer a {
+            color: orange; /* Light orange */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .destination {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .destination {
+                flex: 1 1 calc(100% - 20px);
+                max-width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INCREDIBLE INDIA</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="banner">
+        <h1>INCREDIBLE INDIA</h1>
+    </div>
+    <div class="search-bar">
+        <input type="search" id="search-input" placeholder="Search destinations...">
+        <button id="search-btn">Search</button>
+    </div>
+    <section class="featured-destinations">
+        <h2>Featured Destinations</h2>
+        <div class="destinations" id="destinationList">
+            <div class="destination">
+                <img src="dehil.jpg" alt="Delhi">
+                <h3><a href="delhi.html">DELHI</a></h3>
+            </div>
+            <div class="destination">
+                <img src="ap.jpg" alt="Andhra Pradesh">
+                <h3><a href="andhra.html">ANDHRA PRADESH</a></h3>
+            </div>
+            <div class="destination">
+                <img src="kerala.jpg" alt="Kerala">
+                <h3><a href="kerala.html">KERALA</a></h3>
+            </div>
+            <div class="destination">
+                <img src="tamil nadu.jpg" alt="Tamil Nadu">
+                <h3><a href="tn.html">TAMIL NADU</a></h3>
+            </div>
+            <div class="destination">
+                <img src="goa1.jpg" alt="Goa">
+                <h3><a href="goa.html">GOA</a></h3>
+            </div>
+            <div class="destination">
+                <img src="kashmir.jpg" alt="Kashmir">
+                <h3><a href="kashmir.html">KASHMIR</a></h3>
+            </div>
+            <div class="destination">
+                <img src="uk.jpg" alt="Uttarakhand">
+                <h3><a href="UK.html">UTTARAKHAND</a></h3>
+            </div>
+            <div class="destination">
+                <img src="up.jpg" alt="Uttar Pradesh">
+                <h3><a href="UP.html">UTTAR PRADESH</a></h3>
+            </div>
+            <div class="destination">
+                <img src="tg.jpg" alt="Telangana">
+                <h3><a href="TG.html">TELANGANA</a></h3>
+            </div>
+            <div class="destination">
+                <img src="karnataka.jpg" alt="Karnataka">
+                <h3><a href="KARNATAKA.html">KARNATAKA</a></h3>
+            </div>
+            <div class="destination">
+                <img src="maharastra.jpg" alt="Maharashtra">
+                <h3><a href="MAHA.html">MAHARASHTRA</a></h3>
+            </div>
+            <div class="destination">
+                <img src="gujarat.jpg" alt="Gujarat">
+                <h3><a href="Gujarath.html">GUJARAT</a></h3>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; INCREDIBLE INDIA</p>
+        <a href="#">Terms and Conditions</a>
+    </footer>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        const destinations = document.querySelectorAll('.destination');
+
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            console.log(`Searching for: ${searchTerm}`);
+
+            destinations.forEach((destination) => {
+                const destinationName = destination.querySelector('h3 a').textContent.trim().toLowerCase();
+                console.log(`Checking destination: ${destinationName}`);
+                if (destinationName.includes(searchTerm)) {
+                    destination.style.display = 'block';
+                } else {
+                    destination.style.display = 'none';
+                }
+            });
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

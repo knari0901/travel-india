@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: silver;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: yellow;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: yellow;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        #proceedButton {
+            display: none;
+        }
+
+        #result {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Booking Details</h1>
+        <a class="back-btn" href="home.html">Back</a>
+    </header>
+
+    <form id="bookingForm">
+        <div class="form-group">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" placeholder="Enter your destination" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+        </div>
+        <div class="form-group">
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" min="1" required>
+        </div>
+        <div class="form-group">
+            <label for="fullName">Lead traveller name:</label>
+            <input type="text" id="fullName" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" autocomplete="tel" required>
+        </div>
+        <button type="submit">Calculate Total</button>
+    </form>
+
+    <div id="result">
+        <h2>Your Booking Summary</h2>
+        <p id="summary"></p>
+        <button id="proceedButton">Proceed to Confirmation</button>
+    </div>
+
+    <footer>
+        <p>&copy;TOURSUM</p>
+    </footer>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const guests = document.getElementById('guests').value;
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            const totalBudget = guests * 10000;
+
+            const summaryText = `Destination: ${destination}<br>
+                                 Date: ${date}<br>
+                                 Number of Guests: ${guests}<br>
+                                 Total Budget: $${totalBudget}`;
+
+            document.getElementById('summary').innerHTML = summaryText;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('proceedButton').style.display = 'inline-block';
+
+            localStorage.setItem('pendingBooking', JSON.stringify({
+                destination,
+                date,
+                guests: Number(guests),
+                totalBudget,
+                fullName,
+                email,
+                phone,
+                bookingId: new URLSearchParams(window.location.search).get('booking_id'),
+                savedAt: new Date().toISOString()
+            }));
+        });
+
+        document.getElementById('proceedButton').addEventListener('click', function() {
+            window.location.href = 'conformation.html'; 
+        });
+    </script>
+</body>
+</html>

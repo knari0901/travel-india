@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Sites in Goa</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: green;
+            color: silver;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: yellow;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: orange;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font: inherit;
+        }
+
+        .back-btn:hover {
+            background-color: darkorange;
+        }
+
+        .category {
+            margin: 30px 0;
+        }
+
+        .category h2 {
+            font-size: 22px;
+            color: green;
+            border-bottom: 2px solid green;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            transition: box-shadow 0.3s;
+        }
+
+        .location:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .location img {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        .book-now {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .book-now button {
+            font-size: 18px;
+            padding: 12px 20px;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-now button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Historical Sites in Goa</h1>
+        <a class="back-btn" href="home.html">Back</a>
+    </header>
+
+    <section class="category">
+        <h2>Historical Monuments</h2>
+        <div class="location">
+            <img src="Basilica of Bom Jesus.jpg" alt="Basilica of Bom Jesus">
+            <h3>1. Basilica of Bom Jesus</h3>
+            <p>Details: A UNESCO World Heritage Site, this baroque church houses the mortal remains of St. Francis Xavier.</p>
+        </div>
+        <div class="location">
+            <img src="Fort Aguada.jpg" alt="Fort Aguada">
+            <h3>2. Fort Aguada</h3>
+            <p>Details: A well-preserved 17th-century Portuguese fort offering stunning views of the Arabian Sea.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Cultural Heritage</h2>
+        <div class="location">
+            <img src="Se Cathedra.jpg" alt="Se Cathedral">
+            <h3>1. Se Cathedral</h3>
+            <p>Details: One of the largest churches in Asia, known for its stunning architecture and historical significance.</p>
+        </div>
+        <div class="location">
+            <img src="Chapora Fort.jpg" alt="Chapora Fort">
+            <h3>2. Chapora Fort</h3>
+            <p>Details: Famous for its scenic views and as a shooting location for the movie "Dil Chahta Hai."</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Markets and Shopping</h2>
+        <div class="location">
+            <img src="Anjuna Flea Market.jpg" alt="Anjuna Flea Market">
+            <h3>1. Anjuna Flea Market</h3>
+            <p>Details: A vibrant market known for its handicrafts, jewelry, and local cuisine, held every Wednesday.</p>
+        </div>
+        <div class="location">
+            <img src="Mapusa Market.jpg" alt="Mapusa Market">
+            <h3>2. Mapusa Market</h3>
+            <p>Details: A bustling market offering a variety of spices, fish, and local produce, perfect for experiencing local life.</p>
+        </div>
+    </section>
+
+    <div class="book-now">
+        <button onclick="window.location.href='booking.html'">Book Now</button>
+    </div>
+
+    <footer>
+        <p>Additional information:</p>
+        <ul>
+            <li>Best time to visit: November to February</li>
+            <li>Language: Konkani, Hindi, English</li>
+            <li>Cuisine: Goan cuisine, Seafood, Vindaloo</li>
+            <li>Must-try dishes: Goan Fish Curry, Bebinca, Feni</li>
+        </ul>
+    </footer>
+</body>
+</html>

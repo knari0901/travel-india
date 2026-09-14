@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to INCREDIBLE INDIA</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: BLACK;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-image: url('your-image-url-here'); /* Add your image URL */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            background-color: yellow;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 60px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: orangered;
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: white; /* Ensure text color is white */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1><i></i></h1> 
+        </div>
+        <div class="options">
+            <button><a href="login.html">Login</a></button>
+            <button><a href="sign.html">Sign Up</a></button>
+        </div>
+    </div>
+</body>
+</html>

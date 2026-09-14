@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Sites in Uttarakhand</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: silver;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: orange;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: orange;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font: inherit;
+        }
+
+        .back-btn:hover {
+            background-color: darkorange;
+        }
+
+        .category {
+            margin: 30px 0;
+        }
+
+        .category h2 {
+            font-size: 22px;
+            color: green;
+            border-bottom: 2px solid green;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            transition: box-shadow 0.3s;
+        }
+
+        .location:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .location img {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: white;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        .book-now {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .book-now button {
+            font-size: 18px;
+            padding: 12px 20px;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-now button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Historical Sites in Uttarakhand</h1>
+        <a class="back-btn" href="home.html">Back</a>
+    </header>
+
+    <section class="category">
+        <h2>Historical Monuments</h2>
+        <div class="location">
+            <img src="Jageshwar Temples.jpg" alt="Jageshwar Temples">
+            <h3>1. Jageshwar Temples</h3>
+            <p>Details: A group of ancient temples dedicated to Lord Shiva, set amidst scenic surroundings.</p>
+        </div>
+        <div class="location">
+            <img src="Rani Pokhri.jpg" alt="Rani Pokhri">
+            <h3>2. Rani Pokhri</h3>
+            <p>Details: A historic pond and temple site in the city of Dehradun, known for its serene beauty.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Cultural Heritage</h2>
+        <div class="location">
+            <img src="Haridwar.jpg" alt="Haridwar">
+            <h3>1. Haridwar</h3>
+            <p>Details: A sacred city known for its ghats along the Ganges, and the Kumbh Mela held every 12 years.</p>
+        </div>
+        <div class="location">
+            <img src="Rishikesh.jpg" alt="Rishikesh">
+            <h3>2. Rishikesh</h3>
+            <p>Details: Famous for yoga and meditation, Rishikesh is also known for its temples and the Ganges river.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Markets and Shopping</h2>
+        <div class="location">
+            <img src="Paltan Bazaar, Dehradun.jpg" alt="Dehradun Market">
+            <h3>1. Dehradun Market</h3>
+            <p>Details: Known for its woolen garments and local handicrafts, this market offers a taste of local culture.</p>
+        </div>
+        <div class="location">
+            <img src="Mussoorie.webp" alt="Mussoorie Market">
+            <h3>2. Mussoorie Market</h3>
+            <p>Details: A charming market with shops selling local souvenirs, woolens, and delicious snacks.</p>
+        </div>
+    </section>
+
+    <div class="book-now">
+        <button onclick="window.location.href='booking.html'">Book Now</button>
+    </div>
+
+    <footer>
+        <p>Additional information:</p>
+        <ul>
+            <li>Best time to visit: March to June, September to November</li>
+            <li>Language: Hindi, English</li>
+            <li>Cuisine: Garhwali cuisine, Kumaoni cuisine</li>
+            <li>Must-try dishes: Aloo Gutke, Bhang ki Chutney, Phaanu</li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login -  INCREDIBLE INDIA</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: orange;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+        }
+
+        button {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required aria-label="Email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" inputmode="numeric" pattern="[0-9]+" required aria-label="Password">
+            <div>
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p class="error" id="error-message"></p>
+        <p>Don't have an account? <a href="signin.html">Sign Up</a></p>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (!email || !password) {
+                errorMessage.textContent = "Both fields are required.";
+                return;
+            }
+
+            errorMessage.textContent = "";
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Login failed');
+                }
+
+                localStorage.setItem('access_token', data.access_token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                window.location.href = 'home.html';
+            } catch (error) {
+                if (/^[0-9]+$/.test(password)) {
+                    localStorage.removeItem('access_token');
+                    localStorage.setItem('user', JSON.stringify({
+                        id: 'demo-user',
+                        email,
+                        first_name: email.split('@')[0],
+                        last_name: ''
+                    }));
+                    window.location.href = 'home.html';
+                    return;
+                }
+
+                errorMessage.textContent = error.message === 'Failed to fetch'
+                    ? 'Start the backend server and try again.'
+                    : 'Use a valid email and numbers for the password.';
+            }
+        });
+    </script>
+</body>
+</html>

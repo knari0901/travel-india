@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        #bookingDetails {
+            text-align: left;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+        .status {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .error {
+            color: #b00020;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 18px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Successful!</h1>
+        <p>Your payment has been processed successfully.</p>
+        <div id="bookingDetails"><p>Loading booking details...</p></div>
+        <a href="home.html" class="btn">Return to Homepage</a>
+    </div>
+    <script>
+        const details = document.getElementById('bookingDetails');
+        const pendingBooking = JSON.parse(localStorage.getItem('pendingBooking') || 'null');
+        const token = localStorage.getItem('access_token') || localStorage.getItem('token');
+
+        function renderBooking(booking, person) {
+            const destination = booking.destination || booking.destination_id?.name || 'Not provided';
+            const date = booking.date || booking.check_in_date;
+            const guests = booking.guests || booking.num_guests;
+            const total = booking.totalBudget ?? booking.total_price;
+            details.innerHTML = `
+                <p class="status">Booking confirmed</p>
+                <p><strong>Traveller:</strong> ${person.fullName || 'Not provided'}</p>
+                <p><strong>Email:</strong> ${person.email || 'Not provided'}</p>
+                <p><strong>Phone:</strong> ${person.phone || 'Not provided'}</p>
+                <p><strong>Destination:</strong> ${destination}</p>
+                <p><strong>Date:</strong> ${new Date(date).toLocaleDateString()}</p>
+                <p><strong>Guests:</strong> ${guests}</p>
+                <p><strong>Total:</strong> INR ${Number(total).toLocaleString('en-IN')}</p>`;
+        }
+
+        async function loadBookingDetails() {
+            if (!pendingBooking) {
+                details.innerHTML = '<p class="error">Booking details are unavailable.</p>';
+                return;
+            }
+
+            if (pendingBooking.bookingId && token) {
+                try {
+                    const response = await fetch(`/api/bookings/${encodeURIComponent(pendingBooking.bookingId)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    if (response.ok) {
+                        const data = await response.json();
+                        const booking = data.booking;
+                        const person = booking.user_id || pendingBooking;
+                        renderBooking(booking, {
+                            fullName: `${person.first_name || ''} ${person.last_name || ''}`.trim() || pendingBooking.fullName,
+                            email: person.email || pendingBooking.email,
+                            phone: person.phone || pendingBooking.phone
+                        });
+                        return;
+                    }
+                } catch (error) {
+                    console.error('Unable to load booking from backend', error);
+                }
+            }
+
+            renderBooking(pendingBooking, pendingBooking);
+        }
+
+        loadBookingDetails();
+    </script>
+</body>
+</html>

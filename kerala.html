@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Sites in Kerala</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: silver;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: orange;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: orange;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font: inherit;
+        }
+
+        .back-btn:hover {
+            background-color: darkorange;
+        }
+
+        .category {
+            margin: 30px 0;
+        }
+
+        .category h2 {
+            font-size: 22px;
+            color: green;
+            border-bottom: 2px solid green;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            transition: box-shadow 0.3s;
+        }
+
+        .location:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .location img {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        footer ul li {
+            margin: 5px 0;
+        }
+
+        .book-now {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .book-now button {
+            font-size: 18px;
+            padding: 12px 20px;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-now button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Historical Sites in Kerala</h1>
+        <a class="back-btn" href="home.html">Back</a>
+    </header>
+
+    <section class="category">
+        <h2>Historical Monuments</h2>
+        <div class="location">
+            <img src="Padmanabhaswamy Temple.jpg" alt="Padmanabhaswamy Temple">
+            <h3>1. Padmanabhaswamy Temple</h3>
+            <p>Details: A famous Hindu temple in Thiruvananthapuram, known for its stunning architecture and rich history.</p>
+        </div>
+        <div class="location">
+            <img src="Fort Kochi.jpg" alt="fort Kochi">
+            <h3>Fort kochi</h3>
+            <p>Details: A historic area known for its colonial architecture, churches, and the iconic Chinese fishing nets.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Cultural Heritage</h2>
+        <div class="location">
+            <img src="Hill Palace.jpg" alt="Hill Palace">
+            <h3>1. Hill Palace</h3>
+            <p>Details: The former residence of the Maharaja of Kochi, featuring a museum with artifacts and a beautiful garden.</p>
+        </div>
+        <div class="location">
+            <img src="Mattancherry Palace.jpg" alt="Mattancherry Palace">
+            <h3>2. Mattancherry Palace</h3>
+            <p>Details: A Portuguese palace known for its stunning murals and a rich history showcasing Kerala’s cultural heritage.</p>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Markets and Shopping</h2>
+        <div class="location">
+            <img src="Jew Town.jpg" alt="Jew Town">
+            <h3>1. Jew Town</h3>
+            <p>Details: Famous for its antique shops and the historic Paradesi Synagogue, reflecting a blend of cultures.</p>
+        </div>
+        <div class="location">
+            <img src="Kochi Market.jpg" alt="Kochi Market">
+            <h3>2. Kochi Market</h3>
+            <p>Details: A vibrant market known for spices, textiles, and handicrafts, perfect for shopping and local experiences.</p>
+        </div>
+    </section>
+
+    <div class="book-now">
+        <button onclick="window.location.href='booking.html'">Book Now</button>
+    </div>
+
+    <footer>
+        <p>Additional information:</p>
+        <ul>
+            <li>Best time to visit: October to March</li>
+            <li>Language: Malayalam, English, Hindi</li>
+            <li>Cuisine: Kerala cuisine, Seafood, Appam</li>
+            <li>Must-try dishes: Kerala Sadya, Fish Curry, Puttu</li>
+        </ul>
+    </footer>
+</body>
+</html>
